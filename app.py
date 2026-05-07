@@ -1,1 +1,1 @@
-printf("Hello from Github hosted Runner");
+print("Hello from GitHub Hosted Runner")

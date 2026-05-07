@@ -9,16 +9,23 @@ on:
 jobs:
   run-python-job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       - name: Show runner operating system
         run: uname -a
 
       - name: Check Python version
-        run: python3 --version
+        run: python --version
 
       - name: Run Python file
-        run: python3 app.py
+        run: python app.py
